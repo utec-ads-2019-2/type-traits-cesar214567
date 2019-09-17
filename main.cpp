@@ -6,7 +6,7 @@ using namespace std;
 
 int main(int argc, char const *argv[]) {
     //Tester::execute();
-    SelfList<int> list(SelfList<int>::Transpose);
+    /*SelfList<int> list(SelfList<int>::Transpose);
     cout<<list.size()<<endl;
     list.insert(5);
     list.insert(3);
@@ -26,6 +26,20 @@ int main(int argc, char const *argv[]) {
         cout<<"no encontrado"<<endl;
     }
     list.print();
-    return EXIT_SUCCESS;
+    */
+   TraitsList<Integer> list;
+   list.insert(6);
+   list.insert(4);
+   list.insert(5);
+   list.insert(5);
+   list.insert(2);
+   if (list.find(2)){
+       cout<<"hey"<<endl;
+   }
+    list.insert(1);
+    list.print();
+    list.remove(2);
+    list.print();
+   return EXIT_SUCCESS;
 }
 
