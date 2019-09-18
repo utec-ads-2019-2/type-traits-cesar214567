@@ -11,41 +11,86 @@ class TraitsList {
       
     private:
         Node<T>* head;
+        Node<T>* tail;
         Operation cmp;
+        int sizes=0;
 
         bool find(T data, Node<T> **&pointer) {
-            // TODO
+            while(*pointer!=nullptr){
+                if (cmp((*pointer)->data,data)){
+                    return true;
+                }else{
+                    pointer=&((*pointer)->next);
+                }
+            }
+            return false;
         }
               
     public:
-        TraitsList() : head(nullptr) {};
+        TraitsList() : head(nullptr),tail(nullptr) {};
              
         bool insert(T data) {
-            // TODO
+            
+            auto a=&head;
+            if (!find(data,a)){
+                if (*a==nullptr){
+                    *a=new Node<T>(data);   
+                }
+            }else{
+                if ((*a)->data==data){
+                    return false;
+                }else{
+                    Node<T> *temp=(*a)->next;
+                    a=&((*a)->next);
+                    *a=new Node<T>(data);
+                                    
+                }
+                    
+            }  
+            
         }
              
         bool remove(T data) {
-            // TODO
+            auto a=&head;
+            if (find(data,a)){
+                if ((*a)->data==data){
+                    auto temp=*a;
+                    *a=temp->next;
+                    temp->prev=*a;
+                }else{
+                    return false;
+                }
+            }
         }  
 
         bool find(T data) {
-            // TODO
+            auto a=&head;
+            return find(data, a);
         }
 
         T operator [] (int index) {
-            // TODO
+            auto temp=this->head;
+            for (int i=0;i<index;i++){
+                temp=temp->next;
+            }
+            return temp->data;
         }
              
         int size() {
-            // TODO
+            return sizes;
         }
 
         void print() {
-            // TODO
+            auto temp=head;
+            while ( temp!=nullptr){
+                cout<<temp->data<<" ";
+                temp=temp->next;
+            }
+            cout<<endl;
         }
 
         ~TraitsList() {
-            // TODO
+            head->killSelf();
         }         
 };
 
