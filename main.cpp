@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-    //Tester::execute();
+    Tester::execute();
     /*SelfList<int> list(SelfList<int>::Transpose);
     cout<<list.size()<<endl;
     list.insert(5);
@@ -27,7 +27,7 @@ int main(int argc, char const *argv[]) {
     }
     list.print();
     */
-   TraitsList<Integer> list;
+   /*TraitsList<Integer> list;
    list.insert(6);
    list.insert(4);
    list.insert(5);
@@ -39,7 +39,7 @@ int main(int argc, char const *argv[]) {
     list.insert(1);
     list.print();
     list.remove(2);
-    list.print();
+    list.print();*/
    return EXIT_SUCCESS;
 }
 

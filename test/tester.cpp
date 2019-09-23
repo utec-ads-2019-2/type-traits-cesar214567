@@ -21,6 +21,7 @@ void Tester::execute() {
             floats.remove(20.f / (i + 1.f) + 2.f);
         }
 
+        // Falla aquí porque el insert o remove no están funcionando bien
         int newSize = size - 5;
         ASSERT(integers.size() == newSize, "The size function has problems");
         ASSERT(floats.size() == newSize, "The size function has problems");

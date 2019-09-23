@@ -60,6 +60,7 @@ class SelfList {
             for (int i=0;i<sizes;i++){
                 if (temp->data==data){
                     cout<<method<<endl;
+                    // Podrías separarlo en métodos privados
                     if (method==Move){
                         if(sizes>1){
                             if (temp!=head){

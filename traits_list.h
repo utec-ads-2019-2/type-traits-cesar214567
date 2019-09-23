@@ -37,6 +37,7 @@ class TraitsList {
                     *a=new Node<T>(data);   
                 }
             }else{
+                // Si lo encuentra, entonces no se debería hacer nada
                 if ((*a)->data==data){
                     return false;
                 }else{
@@ -53,6 +54,7 @@ class TraitsList {
         bool remove(T data) {
             auto a=&head;
             if (find(data,a)){
+                // Estás haciendo una doble validación
                 if ((*a)->data==data){
                     auto temp=*a;
                     *a=temp->next;
@@ -69,6 +71,7 @@ class TraitsList {
         }
 
         T operator [] (int index) {
+            // No controlas casos del index, negativo o mayor al tamaño
             auto temp=this->head;
             for (int i=0;i<index;i++){
                 temp=temp->next;
