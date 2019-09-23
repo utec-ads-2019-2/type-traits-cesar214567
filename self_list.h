@@ -57,6 +57,7 @@ class SelfList {
 
         bool find(T data) {
             Node<T> *temp=head;
+            // Podrías ahorrar código sacando 
             for (int i=0;i<sizes;i++){
                 if (temp->data==data){
                     cout<<method<<endl;
